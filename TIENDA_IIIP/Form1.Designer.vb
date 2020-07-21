@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmUsuario
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,13 @@ Partial Class FrmUsuario
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtResultado = New System.Windows.Forms.TextBox()
+        Me.txtModificado = New System.Windows.Forms.TextBox()
         Me.cmbRol = New System.Windows.Forms.ComboBox()
         Me.txtCorreo = New System.Windows.Forms.TextBox()
         Me.txtPsw = New System.Windows.Forms.TextBox()
@@ -39,12 +43,11 @@ Partial Class FrmUsuario
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnDesencriptar = New System.Windows.Forms.Button()
-        Me.txtModificado = New System.Windows.Forms.TextBox()
         Me.btnEncriptar = New System.Windows.Forms.Button()
-        Me.txtResultado = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -78,55 +81,100 @@ Partial Class FrmUsuario
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos usuario"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Label9.Location = New System.Drawing.Point(6, 207)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(97, 16)
+        Me.Label9.TabIndex = 17
+        Me.Label9.Text = "Desencriptar"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Label8.Location = New System.Drawing.Point(13, 164)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(70, 16)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Encriptar"
+        '
+        'txtResultado
+        '
+        Me.txtResultado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtResultado.Location = New System.Drawing.Point(109, 205)
+        Me.txtResultado.Multiline = True
+        Me.txtResultado.Name = "txtResultado"
+        Me.txtResultado.Size = New System.Drawing.Size(196, 30)
+        Me.txtResultado.TabIndex = 15
+        '
+        'txtModificado
+        '
+        Me.txtModificado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtModificado.Location = New System.Drawing.Point(109, 164)
+        Me.txtModificado.Multiline = True
+        Me.txtModificado.Name = "txtModificado"
+        Me.txtModificado.Size = New System.Drawing.Size(196, 31)
+        Me.txtModificado.TabIndex = 14
+        '
         'cmbRol
         '
+        Me.cmbRol.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbRol.FormattingEnabled = True
-        Me.cmbRol.Items.AddRange(New Object() {"Activo", "Eliminado"})
-        Me.cmbRol.Location = New System.Drawing.Point(323, 20)
+        Me.cmbRol.Items.AddRange(New Object() {"Admin", "Cajero"})
+        Me.cmbRol.Location = New System.Drawing.Point(311, 17)
         Me.cmbRol.Name = "cmbRol"
-        Me.cmbRol.Size = New System.Drawing.Size(126, 24)
+        Me.cmbRol.Size = New System.Drawing.Size(147, 21)
         Me.cmbRol.TabIndex = 13
         '
         'txtCorreo
         '
-        Me.txtCorreo.Location = New System.Drawing.Point(323, 89)
+        Me.txtCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCorreo.Location = New System.Drawing.Point(311, 86)
         Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(126, 22)
+        Me.txtCorreo.Size = New System.Drawing.Size(147, 20)
         Me.txtCorreo.TabIndex = 12
         '
         'txtPsw
         '
+        Me.txtPsw.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPsw.Location = New System.Drawing.Point(107, 131)
         Me.txtPsw.Name = "txtPsw"
-        Me.txtPsw.Size = New System.Drawing.Size(126, 22)
+        Me.txtPsw.Size = New System.Drawing.Size(198, 20)
         Me.txtPsw.TabIndex = 11
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(323, 56)
+        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Location = New System.Drawing.Point(311, 53)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(126, 22)
+        Me.txtUsername.Size = New System.Drawing.Size(147, 20)
         Me.txtUsername.TabIndex = 10
         '
         'txtApellido
         '
+        Me.txtApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtApellido.Location = New System.Drawing.Point(107, 92)
         Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(126, 22)
+        Me.txtApellido.Size = New System.Drawing.Size(126, 20)
         Me.txtApellido.TabIndex = 9
         '
         'txtNombre
         '
+        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.Location = New System.Drawing.Point(107, 59)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(126, 22)
+        Me.txtNombre.Size = New System.Drawing.Size(126, 20)
         Me.txtNombre.TabIndex = 8
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(107, 23)
+        Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.Location = New System.Drawing.Point(107, 22)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(126, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(126, 20)
         Me.txtCodigo.TabIndex = 7
         '
         'Label7
@@ -201,91 +249,96 @@ Partial Class FrmUsuario
         '
         'btnGuardar
         '
+        Me.btnGuardar.BackColor = System.Drawing.Color.Honeydew
         Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardar.Location = New System.Drawing.Point(27, 265)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(117, 31)
         Me.btnGuardar.TabIndex = 1
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnDesencriptar
         '
+        Me.btnDesencriptar.BackColor = System.Drawing.Color.Honeydew
         Me.btnDesencriptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDesencriptar.Location = New System.Drawing.Point(254, 265)
         Me.btnDesencriptar.Name = "btnDesencriptar"
         Me.btnDesencriptar.Size = New System.Drawing.Size(105, 32)
         Me.btnDesencriptar.TabIndex = 2
         Me.btnDesencriptar.Text = "Desencriptar"
-        Me.btnDesencriptar.UseVisualStyleBackColor = True
-        '
-        'txtModificado
-        '
-        Me.txtModificado.Location = New System.Drawing.Point(109, 164)
-        Me.txtModificado.Multiline = True
-        Me.txtModificado.Name = "txtModificado"
-        Me.txtModificado.Size = New System.Drawing.Size(124, 31)
-        Me.txtModificado.TabIndex = 14
+        Me.btnDesencriptar.UseVisualStyleBackColor = False
         '
         'btnEncriptar
         '
+        Me.btnEncriptar.BackColor = System.Drawing.Color.Honeydew
         Me.btnEncriptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEncriptar.Location = New System.Drawing.Point(145, 265)
         Me.btnEncriptar.Name = "btnEncriptar"
         Me.btnEncriptar.Size = New System.Drawing.Size(100, 32)
         Me.btnEncriptar.TabIndex = 3
         Me.btnEncriptar.Text = "Encriptar"
-        Me.btnEncriptar.UseVisualStyleBackColor = True
-        '
-        'txtResultado
-        '
-        Me.txtResultado.Location = New System.Drawing.Point(109, 205)
-        Me.txtResultado.Multiline = True
-        Me.txtResultado.Name = "txtResultado"
-        Me.txtResultado.Size = New System.Drawing.Size(124, 30)
-        Me.txtResultado.TabIndex = 15
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Label8.Location = New System.Drawing.Point(13, 164)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(70, 16)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Encriptar"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Label9.Location = New System.Drawing.Point(6, 207)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(97, 16)
-        Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Desencriptar"
+        Me.btnEncriptar.UseVisualStyleBackColor = False
         '
         'btnSalir
         '
+        Me.btnSalir.BackColor = System.Drawing.Color.Honeydew
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.Location = New System.Drawing.Point(364, 265)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(112, 32)
         Me.btnSalir.TabIndex = 4
         Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = True
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.MintCream
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Location = New System.Drawing.Point(28, 304)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(116, 32)
+        Me.btnEliminar.TabIndex = 5
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.MintCream
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(145, 303)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(101, 32)
+        Me.btnModificar.TabIndex = 6
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.MintCream
+        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.Location = New System.Drawing.Point(254, 303)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(105, 32)
+        Me.btnBuscar.TabIndex = 7
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'FrmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(495, 307)
+        Me.ClientSize = New System.Drawing.Size(495, 352)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnEncriptar)
         Me.Controls.Add(Me.btnDesencriptar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmUsuario"
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
@@ -317,4 +370,7 @@ Partial Class FrmUsuario
     Friend WithEvents Label8 As Label
     Friend WithEvents txtResultado As TextBox
     Friend WithEvents btnSalir As Button
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnBuscar As Button
 End Class
