@@ -1,7 +1,15 @@
 ﻿
 Imports System.Text.RegularExpressions
+
+Imports System.Data.SqlClient
 Public Class FrmUsuario
     Dim conexion As New Conexion()
+    Dim DT As New DataTable
+    Public ds As DataSet = New DataSet()
+    Public dr As SqlDataReader
+
+
+
 
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
@@ -27,7 +35,8 @@ Public Class FrmUsuario
             txtCorreo.Focus()
             txtCorreo.SelectAll()
         Else
-            insertarUsuaurio()
+            insertarUsuario()
+
             MessageBox.Show("Correo valido", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
             conexion.conexion.Close()
 
@@ -35,19 +44,19 @@ Public Class FrmUsuario
 
 
     End Sub
-    Private Sub insertarUsuaurio()
+    Private Sub insertarUsuario()
         Dim idUsuario As Integer
-        Dim nombre, apellido, userName, psw, correo, rol, estado As String
+        Dim nombre, apellido, userName, pws, correo, rol, estado As String
         idUsuario = txtCodigo.Text
         nombre = txtNombre.Text
         apellido = txtApellido.Text
         userName = txtUsername.Text
-        psw = txtPsw.Text
+        pws = txtPsw.Text
         correo = txtCorreo.Text
         estado = "activo"
         rol = cmbRol.Text
         Try
-            If conexion.insertarUsuario(idUsuario, nombre, apellido, userName, psw, rol, estado, correo) Then
+            If conexion.insertarUsuario(idUsuario, nombre, apellido, userName, pws, rol, estado, correo) Then
                 MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Limpiar()
             Else
@@ -99,14 +108,19 @@ Public Class FrmUsuario
         End Try
     End Sub
     Private Sub BuscarUsuario()
-        Dim UserName As String
-        UserName = txtUsername.Text
+        Dim Username As String
+        Username = txtUsername.Text
         Try
-            If (conexion.BuscarUsuario(UserName)) Then
-                MsgBox("El Usuario ha  sido Encontrado correctamente")
 
+            DT = conexion.BuscarUsuario(Username)
+            If DT.Rows.Count <> 0 Then
+                MessageBox.Show("Usuario ha sido encontrado ", "Buscando Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                DGV.DataSource = DT
+                txtUsername.Text = ""
             Else
-                MsgBox("Error el usuario no ha sido  encontrado")
+                MessageBox.Show("El Usuario no ha sido  encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                DGV.DataSource = Nothing
+                txtUsername.Text = ""
 
             End If
         Catch ex As Exception
@@ -142,4 +156,17 @@ Public Class FrmUsuario
         txtModificado.Text = Eramake.eCryptography.Encrypt(txtPsw.Text)
     End Sub
 
+    Private Sub DGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
+        Dim i As Integer
+        i = DGV.CurrentRow.Index
+        txtCodigo.Text = DGV.Item(0, i).Value
+        txtNombre.Text = DGV.Item(1, i).Value
+        txtApellido.Text = DGV.Item(2, i).Value
+        txtPsw.Text = DGV.Item(3, i).Value
+        cmbRol.Text = DGV.Item(4, i).Value
+        txtUsername.Text = DGV.Item(5, i).Value
+        txtCorreo.Text = DGV.Item(6, i).Value
+
+
+    End Sub
 End Class

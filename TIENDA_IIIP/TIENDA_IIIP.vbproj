@@ -116,6 +116,10 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Conexion.datasource" />
+    <None Include="My Project\DataSources\FrmUsuario.datasource" />
+    <None Include="My Project\DataSources\TIENDA_IIIP.My.MyApplication.datasource" />
+    <None Include="My Project\DataSources\TIENDA_IIIP.My.MySettings.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

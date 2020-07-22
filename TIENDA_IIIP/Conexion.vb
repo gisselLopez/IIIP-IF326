@@ -20,7 +20,7 @@ Public Class Conexion
         End Try
     End Sub
     Public Function insertarUsuario(idUsuario As Integer, nombre As String, apellido As String, userName As String,
-                                    psw As String, rol As String, estado As String, correo As String)
+                                    pws As String, rol As String, estado As String, correo As String)
         Try
             conexion.Open()
             cmb = New SqlCommand("insertarUsuario", conexion)
@@ -29,7 +29,7 @@ Public Class Conexion
             cmb.Parameters.AddWithValue("@nombre", nombre)
             cmb.Parameters.AddWithValue("@apellido", apellido)
             cmb.Parameters.AddWithValue("@userName", userName)
-            cmb.Parameters.AddWithValue("@psw", psw)
+            cmb.Parameters.AddWithValue("@pws", pws)
             cmb.Parameters.AddWithValue("@rol", rol)
             cmb.Parameters.AddWithValue("@estado", estado)
             cmb.Parameters.AddWithValue("@correo", correo)
@@ -100,17 +100,20 @@ Public Class Conexion
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@userName", userName)
 
-            If cmb.ExecuteNonQuery <> 0 Then
-                Return True
+            If cmb.ExecuteNonQuery Then
+                Dim DT As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(DT)
+                Return DT
+
             Else
-                Return False
+                Return Nothing
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-            Return False
+            Return Nothing
         Finally
             conexion.Close()
         End Try
     End Function
-
 End Class
