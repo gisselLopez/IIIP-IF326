@@ -66,6 +66,8 @@ Public Class Conexion
     End Function
 
 
+
+
     Public Function modificarUsuario(idUsuario As Integer, nombre As String, apellido As String, userName As String,
                                 pws As String, rol As String, estado As String, correo As String)
         Try

@@ -157,16 +157,47 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub DGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
-        Dim i As Integer
-        i = DGV.CurrentRow.Index
-        txtCodigo.Text = DGV.Item(0, i).Value
-        txtNombre.Text = DGV.Item(1, i).Value
-        txtApellido.Text = DGV.Item(2, i).Value
-        txtPsw.Text = DGV.Item(3, i).Value
-        cmbRol.Text = DGV.Item(4, i).Value
-        txtUsername.Text = DGV.Item(5, i).Value
-        txtCorreo.Text = DGV.Item(6, i).Value
 
 
+    End Sub
+    Function cambiar(ByVal cambiartext As String) As String
+        Dim A As String = StrConv(cambiartext, VbStrConv.ProperCase)
+        Return A
+    End Function
+    Private Sub OrdenarPalabras()
+        Me.txtApellido.Text = cambiar(Me.txtApellido.Text)
+        Me.txtNombre.Text = cambiar(Me.txtNombre.Text)
+
+    End Sub
+
+    Private Sub Minuscula()
+        Dim minuscula As String
+        minuscula = LCase(txtCorreo.Text)
+        txtCorreo.Text = minuscula
+    End Sub
+
+
+    Private Sub btnOrdenar_Click(sender As Object, e As EventArgs) Handles btnOrdenar.Click
+        OrdenarPalabras()
+        Minuscula()
+    End Sub
+
+    Private Sub DGV_SelectionChanged(sender As Object, e As EventArgs) Handles DGV.SelectionChanged
+
+
+        'Obtén el número de la fila que se seleccionó en el Datagridview
+        Dim FilaActual As Integer
+        FilaActual = DGV.CurrentRow.Index
+
+
+
+
+        txtCodigo.Text = DGV.Rows(FilaActual).Cells(0).Value
+        txtNombre.Text = DGV.Rows(FilaActual).Cells(1).Value
+        txtApellido.Text = DGV.Rows(FilaActual).Cells(2).Value
+        txtPsw.Text = DGV.Rows(FilaActual).Cells(3).Value
+        cmbRol.Text = DGV.Rows(FilaActual).Cells(4).Value
+        txtUsername.Text = DGV.Rows(FilaActual).Cells(5).Value
+        txtCorreo.Text = DGV.Rows(FilaActual).Cells(6).Value
     End Sub
 End Class

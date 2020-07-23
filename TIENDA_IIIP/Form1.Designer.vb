@@ -48,6 +48,7 @@ Partial Class FrmUsuario
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DGV = New System.Windows.Forms.DataGridView()
+        Me.btnOrdenar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -243,7 +244,7 @@ Partial Class FrmUsuario
         Me.btnDesencriptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDesencriptar.Location = New System.Drawing.Point(251, 299)
         Me.btnDesencriptar.Name = "btnDesencriptar"
-        Me.btnDesencriptar.Size = New System.Drawing.Size(105, 22)
+        Me.btnDesencriptar.Size = New System.Drawing.Size(100, 22)
         Me.btnDesencriptar.TabIndex = 2
         Me.btnDesencriptar.Text = "Desencriptar"
         Me.btnDesencriptar.UseVisualStyleBackColor = False
@@ -263,9 +264,9 @@ Partial Class FrmUsuario
         '
         Me.btnSalir.BackColor = System.Drawing.Color.Honeydew
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Location = New System.Drawing.Point(63, 327)
+        Me.btnSalir.Location = New System.Drawing.Point(251, 327)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(245, 23)
+        Me.btnSalir.Size = New System.Drawing.Size(100, 23)
         Me.btnSalir.TabIndex = 4
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
@@ -321,12 +322,24 @@ Partial Class FrmUsuario
         Me.DGV.Size = New System.Drawing.Size(282, 228)
         Me.DGV.TabIndex = 0
         '
+        'btnOrdenar
+        '
+        Me.btnOrdenar.BackColor = System.Drawing.Color.MintCream
+        Me.btnOrdenar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOrdenar.Location = New System.Drawing.Point(12, 327)
+        Me.btnOrdenar.Name = "btnOrdenar"
+        Me.btnOrdenar.Size = New System.Drawing.Size(115, 23)
+        Me.btnOrdenar.TabIndex = 16
+        Me.btnOrdenar.Text = "Ordenar"
+        Me.btnOrdenar.UseVisualStyleBackColor = False
+        '
         'FrmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(569, 355)
+        Me.Controls.Add(Me.btnOrdenar)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtResultado)
@@ -376,4 +389,5 @@ Partial Class FrmUsuario
     Friend WithEvents btnBuscar As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DGV As DataGridView
+    Friend WithEvents btnOrdenar As Button
 End Class
