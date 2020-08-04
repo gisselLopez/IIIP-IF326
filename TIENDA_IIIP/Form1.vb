@@ -189,9 +189,6 @@ Public Class FrmUsuario
         Dim FilaActual As Integer
         FilaActual = DGV.CurrentRow.Index
 
-
-
-
         txtCodigo.Text = DGV.Rows(FilaActual).Cells(0).Value
         txtNombre.Text = DGV.Rows(FilaActual).Cells(1).Value
         txtApellido.Text = DGV.Rows(FilaActual).Cells(2).Value
