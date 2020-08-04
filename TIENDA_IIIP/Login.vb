@@ -65,9 +65,9 @@
         userName = txtUsuario.Text
         psw = txtPsw.Text
         Try
-            If conexion.validarUsuario(userName, psw) Then
+            If conexion.validarUusario(userName, psw) Then
                 MsgBox("Correcto")
-                frmUsuario.Show()
+                FrmUsuario.Show()
                 Me.Hide()
             Else
                 MsgBox("Usuario/Contraseña invalido")
@@ -78,7 +78,9 @@
     End Sub
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
-        ingresarMenu()
+        Me.Hide()
+
+        FrmUsuario.Show()
     End Sub
 
     Private Sub btnborrarderecha_Click(sender As Object, e As EventArgs) Handles btnborrarderecha.Click
@@ -89,7 +91,5 @@
         End If
     End Sub
 
-    Private Sub btnCambiarPsw_Click(sender As Object, e As EventArgs) Handles btnCambiarPsw.Click
 
-    End Sub
 End Class

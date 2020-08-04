@@ -163,9 +163,8 @@
     <None Include="Resources\LOGO.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BDTiendaIIIP.txt" />
     <Content Include="Mensaje.html" />
-    <Content Include="TextFile1.txt" />
+    <Content Include="BaseTienda.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

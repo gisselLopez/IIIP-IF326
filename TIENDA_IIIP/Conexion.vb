@@ -118,13 +118,13 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Function
-    Public Function validarUsuario(userName As String, psw As String)
+    Public Function validarUusario(userName As String, pws As String)
         Try
             conexion.Open()
-            cmb = New SqlCommand("validarUsuario", conexion)
+            cmb = New SqlCommand("validarUusario", conexion)
             cmb.CommandType = 4
-            cmb.Parameters.AddWithValue("@userName", userName)
-            cmb.Parameters.AddWithValue("@psw", psw)
+            cmb.Parameters.AddWithValue("@usuername", userName)
+            cmb.Parameters.AddWithValue("@pws", pws)
             If cmb.ExecuteNonQuery <> 0 Then
                 Return True
             Else
